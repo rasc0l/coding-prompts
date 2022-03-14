@@ -31,5 +31,4 @@ b_node_two.next = b_node_three
 b_node_three.next = shared_node_one
 shared_node_one.next = shared_node_two
 
-print(findIntersect(a_node_one, b_node_one))
 print(findIntersect(a_node_one, b_node_one) == shared_node_one)
