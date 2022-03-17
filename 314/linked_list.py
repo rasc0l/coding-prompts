@@ -2,7 +2,10 @@ class ListNode:
     def __init__(self, data):
         self.data = data
         self.next = None
-        
+
+# Use the fact that you can concatenate the lists to make the lists
+# of equal length, then it is possible to find the repeating sublist
+# by just walking through the concatenated lists
 def findIntersect(a: ListNode, b: ListNode) -> ListNode:
     currA = a
     currB = b

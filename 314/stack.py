@@ -3,11 +3,13 @@ class Stack:
         self.data = []
         self.max_stack = []
         
+    # Push onto  max _tack only if it's a new max or data is empty
     def push(self, elem):
         if not self.data or elem >= self.get_max():
             self.max_stack.append(elem)
         self.data.append(elem)
         
+    # Pop max_stack only if the element being popped is equal to the top value in the max_stack
     def pop(self):
         if not self.data:
             raise Exception('Stack is empty')
@@ -15,6 +17,7 @@ class Stack:
             self.max_stack.pop()
         return self.data.pop()
         
+    # Check last element added to the max_stack
     def get_max(self):
         if not self.data:
             raise Exception('Stack is empty')
