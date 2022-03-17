@@ -1,19 +1,21 @@
 class ListNode:
     def __init__(self, data):
         self.data = data
-        self.visited = False
         self.next = None
         
 def findIntersect(a: ListNode, b: ListNode) -> ListNode:
-    while a is not None:
-        a.visited = True
-        a = a.next
-    while b is not None:
-        if b.visited:
-            return b
+    currA = a
+    currB = b
+    while currA is not currB:
+        if currA.next is None:
+            currA = b
         else:
-            b = b.next
-    return None
+            currA = currA.next
+        if currB.next is None:
+            currB = a
+        else:
+            currB = currB.next
+    return currA
 
 a_node_one = ListNode(1)
 a_node_two = ListNode(2)
